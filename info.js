@@ -73,10 +73,10 @@ Info.prototype = {
 }
 
 $.fn.extend({
-  info:function(){
+  info:function(ops){
     $.each(this,function(i,v){
-      var id=$(v).attr('id');
-      var i = new Info(id);
+      var id=$(v).attr('id',ops);
+      var i = new Info(id,ops);
       i.init();
     })
 
